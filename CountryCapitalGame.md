@@ -93,3 +93,5 @@ When an element's key changes, React will create a new component instance rather
 
 However, it's important to note that keys only make sense in the context of the surrounding array. For example, if you extract a ListItem component, you should preserve the key on the array's ListItem /> elements rather than the ListItem's li> element.
 https://www.dhiwise.com/post/react-lists-and-keys-the-key-to-efficient-rendering
+
+https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/
