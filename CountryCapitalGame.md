@@ -3,6 +3,8 @@ https://devtools.tech/questions/s/build-country-capital-game-or-microsoft-fronte
 
 ## Learnings: 
 ### Shuffling an array:
+
+https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript/
 1. Fisher-Yates Sorting Algorithm:
  This algorithm's basic premise is to iterate over the items, swapping each element in the array with a randomly selected element from the remaining un-shuffled portion of the array.
 
@@ -43,7 +45,8 @@ console.log(shuffledArray);
    ### Why do you subtract 0.5 from the result of Math.random()?
 By subtracting 0.5 from the result of Math.random(), you introduce a random value between -0.5 and 0.5. This random value will cause the comparison function to return negative, positive, or zero values in a random manner for different pairs of elements. Consequently, the sort() method shuffles the array randomly.
 
-https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript/
+
 
 3. Using lodash :  _ .shuffle(arrayinput)
+   
    https://www.geeksforgeeks.org/lodash-_-shuffle-method/
