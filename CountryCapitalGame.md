@@ -95,3 +95,10 @@ However, it's important to note that keys only make sense in the context of the 
 https://www.dhiwise.com/post/react-lists-and-keys-the-key-to-efficient-rendering
 
 https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/
+
+### Use of event delegation:
+we can consider event delegation here as there can be big number of click events if my list of country, capital is big.
+
+@DevtoolsTech
+2 months ago
+You can put the event handler on the parent. The event bubbles up to the parent. You get the target and do the necessary processing. Benefit of this approach would be that you have only one event handler now rather than individual event handler on each list item. This saves memory. For a large list, it matters.
