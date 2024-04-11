@@ -59,7 +59,7 @@ import classnames from 'classnames';
 return (
     <div className={classes.gameBoard}>
       {array.map((el) => {
-        const isSelected = selectedTuple.indexOf(el) != -1;
+        const isSelected = selectedTuple.indexOf(el) != -1 || correctPair.indexOf(el)!= -1 ;
         const isIncorrect =
           selectedTuple.length == 2 &&
           isSelected &&
@@ -70,7 +70,12 @@ return (
           correctPair.indexOf(el) !== -1;
         return (
   <button
-  className={classnames("option",isSelected && 'selected')}
+  className={classnames(   
+             "option",
+             isSelected && 'selected',
+             isIncorrect && 'incorrect',
+             isCorrect && 'correct'
+          )}
 key={el}
 >{el}</button>
 
@@ -79,3 +84,12 @@ key={el}
 ### Importance of using key attribute with unique value in react components
 
 In case we select a country/capital and make code change , react on re-render would remember the last selected value , because of the key value passed, which would be same for the country/capital across re-renders .Even if the values are shuffled, the key is maintained.
+
+
+Importance of Keys in React
+Keys are significant in React because they aid in determining whether items in a list have been changed, updated, or removed. This process helps React to optimize the rendering by recycling existing DOM elements.
+
+When an element's key changes, React will create a new component instance rather than update the current one. This is why keys need to be stable in a list.
+
+However, it's important to note that keys only make sense in the context of the surrounding array. For example, if you extract a ListItem component, you should preserve the key on the array's ListItem /> elements rather than the ListItem's li> element.
+https://www.dhiwise.com/post/react-lists-and-keys-the-key-to-efficient-rendering
