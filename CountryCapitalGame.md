@@ -1,7 +1,7 @@
-(https://devtools.tech/questions/build-country-capital-game-or-microsoft-frontend-interview-question-or-javascript-or-react-js---qid---yPb5g7MLCSf6j2F3qjqj/submissions/nHmlUdTI1jEiJyGgy0oR)
+(https://devtools.tech/questions/build-country-capital-game-or-microsoft-frontend-interview-question-or-javascript-or-reactjs/submissions/ER6ZW8GRSl2KrCSv2eNO)
 
 ## Learnings: 
-### Shuffling an array:
+### 1.Shuffling an array:
 
 https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript/
 1. Fisher-Yates Sorting Algorithm:
@@ -41,7 +41,7 @@ console.log(shuffledArray);
     const shuffledArray = shuffle(myArray); 
     console.log(shuffledArray);
    ```
-   ### Why do you subtract 0.5 from the result of Math.random()?
+   #### Why do you subtract 0.5 from the result of Math.random()?
 By subtracting 0.5 from the result of Math.random(), you introduce a random value between -0.5 and 0.5. This random value will cause the comparison function to return negative, positive, or zero values in a random manner for different pairs of elements. Consequently, the sort() method shuffles the array randomly.
 
 
@@ -49,3 +49,33 @@ By subtracting 0.5 from the result of Math.random(), you introduce a random valu
 3. Using lodash :  _ .shuffle(arrayinput)
    
    https://www.geeksforgeeks.org/lodash-_-shuffle-method/
+
+### Use of classnames package to apply classes conditionally
+```
+import classnames from 'classnames';
+...
+...
+
+return (
+    <div className={classes.gameBoard}>
+      {array.map((el) => {
+        const isSelected = selectedTuple.indexOf(el) != -1;
+        const isIncorrect =
+          selectedTuple.length == 2 &&
+          isSelected &&
+          correctPair.indexOf(el) == -1;
+        const isCorrect =
+          selectedTuple.length == 2 &&
+          isSelected &&
+          correctPair.indexOf(el) !== -1;
+        return (
+  <button
+  className={classnames("option",isSelected && 'selected')}
+key={el}
+>{el}</button>
+
+```
+
+### Importance of using key attribute with unique value in react components
+
+In case we select a country/capital and make code change , react on re-render would remember the last selected value , because of the key value passed, which would be same for the country/capital across re-renders .Even if the values are shuffled, the key is maintained.
